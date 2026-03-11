@@ -2,7 +2,7 @@ from pddl.core import Action, Predicate, And
 from pddl.logic.base import Not
 from pddl.logic.helpers import constants, variables
 
-from pddlutils.regression import regress_action
+from pddlutils.regression import regress_goal
 
 
 def test_simple():
@@ -20,6 +20,6 @@ def test_simple():
     condition = And(p_holding(a), p_on(b, c))
     action = a_pick_up.instantiate([a, b])
 
-    regr_cond = regress_action(condition, action)
+    regr_cond = regress_goal(condition, action)
     regr_cond_expected = And(p_on(a, b), p_on(b, c))
     assert regr_cond == regr_cond_expected

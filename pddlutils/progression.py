@@ -37,7 +37,7 @@ def apply_effects(state: State, effects: Optional[Formula]) -> State:
         raise NotImplementedError(f"Unsupported effects type: {type(effects)}")
 
 
-def progress_action(state: State, action: Action) -> State:
+def progress_state(state: State, action: Action) -> State:
     """Progress an action"""
     if not satisfies(state, action.precondition):
         raise PDDLLogicError("Action precondition is not satisfied in the state.")

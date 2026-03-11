@@ -2,7 +2,7 @@ from pddl.core import Action, Predicate, And
 from pddl.logic.base import Not
 from pddl.logic.helpers import constants, variables
 
-from pddlutils.progression import progress_action
+from pddlutils.progression import progress_state
 
 
 def test_simple():
@@ -20,6 +20,6 @@ def test_simple():
     state = {p_on(a, b), p_on(b, c)}
     action = a_pick_up.instantiate([a, b])
 
-    succ_state = progress_action(state, action)
+    succ_state = progress_state(state, action)
     succ_state_expected = {p_holding(a), p_on(b, c)}
     assert succ_state == succ_state_expected

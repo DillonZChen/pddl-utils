@@ -38,7 +38,7 @@ def regressable(condition: Formula, action: Action) -> bool:
     return non_empty_add_intersection and empty_del_intersection
 
 
-def regress_action(condition: Formula, action: Action) -> Formula:
+def regress_goal(condition: Formula, action: Action) -> Formula:
     r"""Regress a condition g over an action a
 
     Defined for STRIPS as (g \setminus \add(a)) \cup \pre(a)
