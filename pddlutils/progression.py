@@ -38,7 +38,7 @@ def apply_effects(state: State, effects: Optional[Formula]) -> State:
 
 
 def progress_state(state: State, action: Action) -> State:
-    """Progress an action"""
+    """Progress a state"""
     if not satisfies(state, action.precondition):
         raise PDDLLogicError("Action precondition is not satisfied in the state.")
     return apply_effects(state, action.effect)
