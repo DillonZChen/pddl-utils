@@ -1,11 +1,9 @@
-from typing import AbstractSet, Optional, Union
+from typing import Optional
 
 from pddl.core import Action, And, Formula, Predicate
 from pddl.logic.base import Not
 
-Literal = Union[Predicate, Not]
-State = AbstractSet[Formula]
-Plan = list[str]
+from pddlutils.types import Literal
 
 
 def is_neg_literal(literal: Formula) -> bool:

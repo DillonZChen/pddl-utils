@@ -5,7 +5,7 @@ from pddl.logic.predicates import EqualTo
 
 from pddlutils.exceptions import PDDLLogicError
 from pddlutils.strips import is_strips_action
-from pddlutils.utils import State
+from pddlutils.types import State
 
 
 def satisfies(state: State, formula: Optional[Formula]) -> bool:
